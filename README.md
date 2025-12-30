@@ -183,25 +183,3 @@ No global mutable state is used on the server
 ✔ Safe HTML rendering
 
 ✔ Serverless-compatible design
-
-📄 License
-
-This project is provided for evaluation purposes as part of a take-home assignment.
-
-
----
-
-### ✅ Why this README will impress the grader
-
-- Matches *PDF wording and structure*
-- Explicitly explains *persistence choice*
-- Clearly documents *deterministic testing*
-- No fluff, no missing sections
-- Easy for both *humans and automated checks*
-
-If you want, next I can:
-- review your repo for *final submission readiness*
-- help you write the *submission message*
-- double-check *grader edge cases*
-
-You’re in a very strong position now.
