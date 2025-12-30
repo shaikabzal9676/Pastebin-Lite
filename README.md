@@ -61,7 +61,6 @@ Indicates the application is running and can access the database.
 Create a Paste
 POST /api/pastes
 
-
 Request Body
 
 {
@@ -70,11 +69,8 @@ Request Body
   "max_views": 5
 }
 
-
 content (required): non-empty string
-
 ttl_seconds (optional): integer ≥ 1
-
 max_views (optional): integer ≥ 1
 
 Response
@@ -98,53 +94,35 @@ Response
 
 
 remaining_views is null if unlimited
-
 expires_at is null if no TTL
-
 Each successful fetch counts as one view
-
 Unavailable pastes return HTTP 404.
 
 View a Paste (HTML)
 GET /p/:id
-
-
 Returns an HTML page displaying the paste content
-
 Returns 404 if the paste is unavailable
-
 Content is rendered safely (no script execution)
 
 ⏱ Deterministic Time for Testing
-
 To support deterministic expiry testing:
-
 If the environment variable below is set:
-
 TEST_MODE=1
-
-
 The API will use the request header:
-
 x-test-now-ms: <milliseconds since epoch>
-
-
 as the current time for expiry logic only.
-
 If the header is absent or TEST_MODE is not enabled, real system time is used.
-
 This behavior matches the assignment specification and supports automated grading.
 
 🧪 Running Locally
 1️⃣ Clone the repository
-git clone https://github.com/<your-username>/pastebin-lite.git
-cd pastebin-lite
+git clone https://github.com/shaikabzal9676/Pastebin-lite.git
+cd Pastebin-lite
 
 2️⃣ Install dependencies
 npm install
 
 3️⃣ Set environment variables
-
 Create a .env.local file:
 
 MONGODB_URI=mongodb+srv://<user>:<password>@cluster0.mongodb.net/pastebin
@@ -153,33 +131,22 @@ TEST_MODE=0
 4️⃣ Run the development server
 npm run dev
 
-
 Open:
-
 http://localhost:3000
 
 🧠 Design Notes
 
 Paste IDs are generated using nanoid and stored as string _id values in MongoDB
-
 MongoDB is used to ensure data survives across serverless requests
-
 API routes handle all validation and constraint enforcement
-
 HTML rendering uses server components and safely displays plain text
-
 No global mutable state is used on the server
 
 ✅ Assignment Compliance
 
 ✔ All required routes implemented
-
 ✔ Correct HTTP status codes and JSON responses
-
 ✔ Persistence across requests
-
 ✔ Deterministic time support
-
 ✔ Safe HTML rendering
-
 ✔ Serverless-compatible design
