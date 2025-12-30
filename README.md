@@ -49,7 +49,7 @@ No in-memory storage is used for paste persistence.
 ## 🔗 API Endpoints
 
 ### Health Check
-[3:39 AM, 12/31/2025]  GET /api/healthz
+GET /api/healthz
 
 *Response*
 ```json
